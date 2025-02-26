@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goods for You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-primary text-white">
+        <!-- แถบบน -->
+        <div class="flex justify-between items-center px-6 py-2">
+            <!-- โลโก้ -->
+            <div class="flex items-center space-x-2">
+                <img src="images/logo.png" alt="Goods for You Logo" class="h-10">
+            </div>
+
+            <!-- ช่องค้นหา -->
+            <div class="hidden md:flex items-center bg-light rounded-full px-4 py-2 w-1/3">
+                <input type="text" placeholder="What are you looking for? | Saved Search"
+                    class="bg-light outline-none w-full text-white">
+                <button class="text-primary flex items-center space-x-1">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAWdJREFUSEvVl71NA1EQhGcqoAUogBQRYglRAxm4AyQKgBIgI8NUQAk4J0HOES7ABVgkgwfdoWfe/cm33ImXWLKe99vZ2x3vESMdjsRFLVjSJYD9gMTmJOe/42RgSYa9BEFL3ozkNIVXgQ09CVCahliSPGgDq7jgEk36JCDJAizEZ5KWfEtx08VdEggBSzoGcApgDeCZ5HtbMr3BkvYAvCUNd0/yagjwIYBFAnoleTQE2B15DeAcwArAA8k7g4t5d9dms9q71KUySWcAPktIEjgblyKpuK42LAGnM5+ZRKRiK3gEYBe6AGBbTc+U5CypUIxiSaXCZY2l+nsbhT/9/PuDJd1uYt20dfLGbn8cLwrc2b8rmu8fWmaHEmdXQko9JHgXVtNvOv8tjgb2LD4F0u1s3/Pt07QIbLlQYAKVYC96HwUk895I+FDLXrOBFP76F+ttOziBlxYZsdQ7bH1zRT7DtlijvTt9AT5AEy79xBv7AAAAAElFTkSuQmCC"
+                        class="h-6 w-6">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAZhJREFUSEvtlt1RAzEMhKVOSCWQTkglQCUklRAqIVSy3DJWRvjsk5xcJi/o5TIX25+01s+p3Mn0TlxJgQE8iMhTcfKkqsdrHV4EA3gVkZcO5CQiu0udaIIBMLp3EWGkkb2pKh0cshm4QD/cKZT1c5KaT0Zpsnsljqq6HSG3wF8u0m405d6f3VUMRf4HDIDy8jDaNrq/AuceXg3V4B4+Q6vBFm1augLnPlo66hqMcgCzdR+6XRYAYE4w6rTDZzAASkzZaJusZFzswKzxTcZhDz7XrE71kdlsa3xuZPd6MKWyMgoTyzsGYDg3PJj1OZwkRWrLjb2q7jJq1cllSZIujaqtppWqwV7uMEOrLheu90q0OpcfDN1B0Bgg6WjpQAvMu/atkOvoAHv195SAj25E+iBY94eo29mGbtkEI9H20xkmk7VNvv99F/WBaB7bJGKU/G1j8kAVrLtVbdMUWuzbQ41iqUxc97Jli5WxJphqsBz9x0MXvhq4NJI0fFXwCHx1cAc+G7M3AVdwfhzMZvvNwNGg+AdHCq32/w8LJ8cfP7bQKQAAAABJRU5ErkJggg=="
+                        class="h-6 w-6">
+                </button>
+
+            </div>
+
+            <!-- ไอคอนเมนู -->
+            <div class="flex items-center space-x-4">
+                <button>🛒</button>
+                <button>🔔</button>
+                <button>🌍 English ▼</button>
+                <button class="text-primary flex items-center space-x-1">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAf5JREFUSEvFVoltwzAMFDdpJmmzSTNJ20maTtJ2kmYT1meIwomiZDmAEQFBAFvmkcfjI+lBRx6Em3YDq+pTSuklpYT/W3b8JiI/e4KYAs5grymlt4FxOAHwrxknhsCTgN4Xc+BDRIyRxt8ucAb9zpTah4joF5EhKkf7c06B3QXouQceAmeDf+QmjFy2KAyc7YL3gBEpBIQDyt6ZK0oBDFfCCtITgjfAqvq5GIOQGtBsFO/NKU4BGCk5VVU4a2K8isiFna+AVRUGES0OIjm5SJmJRlR83znZpMoDc7QQRqlNHwFSkJERlTGEqK/mkdMKBHm2dx4YgkJjaKjhFMiS9BnjuKOqxlLFIBtgmiNBWVRNlyKnovRwrguLDAzDoBqnomzQrRARGLLSi5jigIrdHvBp1HWIZjaKx5UuMtXsWGGSgZmSTWBXAUOWdFGmZ7KX48ZzTzeJZgs0TOG0uILOZXkd6sGVYWFyuiwcMHJrXanqWAEzpTdwGfo6LjU3MxRGas/CYvFVivfArMCmJjtq7urB6aC6tzUkmroMIgmBdw0JqjtbANDcscr0xiI+gXPVpuFAQ+aOXgTCpoKHe1afdejn37r+5Jzb1hmtPt2t5YhlD/40Q8ZXwJ71luduVEmrHqKcR5engN3sBbX44dhSf8xCv9Uo7nm/K+J7AHrf/ANNMVAuz+5WWwAAAABJRU5ErkJggg=="
+                    class="h-6 w-6" />Help </button>
+                <button class="font-bold">Log in / Sign up</button>
+            </div>
+        </div>
+
+        <!-- แถบเมนู -->
+        <div class="bg-accent text-black px-6 py-2 flex justify-center space-x-6">
+            <a href="#" class="hover:text-primary">Recommendations</a>
+            <a href="#" class="hover:text-primary">Categories ▼</a>
+            <a href="#" class="hover:text-primary">New Arrivals</a>
+            <a href="#" class="hover:text-primary">Best Sellers</a>
+            <a href="#" class="hover:text-primary">Sales & Promotions</a>
+            <a href="#" class="hover:text-primary">See All</a>
+        </div>
+    </nav>
+
+</body>
+
+</html>
+
+
+    <!-- Banner -->
+    <section class="p-6 text-center">
+        <img src="images/banner.png" alt="20% OFF Promotion" class="w-full h-auto">
+    </section>
+
+    <!-- Categories & Populars -->
+    <section class="p-6">
+        <h3 class="text-2xl font-bold mb-4">Popular Categories</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="shadow rounded flex flex-col items-center">
+                <img src="images/frieren nendoriod.jpg" alt="Anime Figures" class="h-24 w-24 object-cover rounded-full">
+                <!-- <p class="mt-2">Anime Figures</p> -->
+            </div>
+            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
+                <img src="assets/images/category2.jpg" alt="Plush Toys" class="h-24 w-24 object-cover rounded-full">
+                <p class="mt-2">Plush Toys</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
+                <img src="assets/images/category3.jpg" alt="Model Kits" class="h-24 w-24 object-cover rounded-full">
+                <p class="mt-2">Model Kits</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
+                <img src="assets/images/category4.jpg" alt="Board Games" class="h-24 w-24 object-cover rounded-full">
+                <p class="mt-2">Board Games</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
+                <img src="assets/images/category4.jpg" alt="Board Games" class="h-24 w-24 object-cover rounded-full">
+                <p class="mt-2">Board Games</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white p-6 mt-6">
+        <p>© 2025 Goods for You</p>
+    </footer>
+
+</body>
+
+</html>
