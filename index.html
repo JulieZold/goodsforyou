@@ -10,92 +10,183 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-white">
 
-    <!-- Navbar -->
-    <nav class="bg-primary text-white">
-        <!-- แถบบน -->
-        <div class="flex justify-between items-center px-6 py-2">
-            <!-- โลโก้ -->
-            <div class="flex items-center space-x-2">
-                <img src="images/logo.png" alt="Goods for You Logo" class="h-10">
-            </div>
+<nav class="bg-primary text-white sticky top-0 z-50 shadow-md">
+    <!-- แถบบน -->
+    <div class="flex justify-between items-center px-6 py-3">
+        <!-- โลโก้ + ช่องค้นหา -->
+        <div class="flex items-center space-x-4 flex-grow">
+            <img src="images/logo1000px.png" alt="Goods for You Logo" class="h-16 w-auto">
 
             <!-- ช่องค้นหา -->
-            <div class="hidden md:flex items-center bg-light rounded-full px-4 py-2 w-1/3">
+            <div class="hidden md:flex items-center bg-light rounded-full px-4 py-2 flex-grow max-w-lg">
                 <input type="text" placeholder="What are you looking for? | Saved Search"
                     class="bg-light outline-none w-full text-white">
                 <button class="text-primary flex items-center space-x-1">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAWdJREFUSEvVl71NA1EQhGcqoAUogBQRYglRAxm4AyQKgBIgI8NUQAk4J0HOES7ABVgkgwfdoWfe/cm33ImXWLKe99vZ2x3vESMdjsRFLVjSJYD9gMTmJOe/42RgSYa9BEFL3ozkNIVXgQ09CVCahliSPGgDq7jgEk36JCDJAizEZ5KWfEtx08VdEggBSzoGcApgDeCZ5HtbMr3BkvYAvCUNd0/yagjwIYBFAnoleTQE2B15DeAcwArAA8k7g4t5d9dms9q71KUySWcAPktIEjgblyKpuK42LAGnM5+ZRKRiK3gEYBe6AGBbTc+U5CypUIxiSaXCZY2l+nsbhT/9/PuDJd1uYt20dfLGbn8cLwrc2b8rmu8fWmaHEmdXQko9JHgXVtNvOv8tjgb2LD4F0u1s3/Pt07QIbLlQYAKVYC96HwUk895I+FDLXrOBFP76F+ttOziBlxYZsdQ7bH1zRT7DtlijvTt9AT5AEy79xBv7AAAAAElFTkSuQmCC"
-                        class="h-6 w-6">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAZhJREFUSEvtlt1RAzEMhKVOSCWQTkglQCUklRAqIVSy3DJWRvjsk5xcJi/o5TIX25+01s+p3Mn0TlxJgQE8iMhTcfKkqsdrHV4EA3gVkZcO5CQiu0udaIIBMLp3EWGkkb2pKh0cshm4QD/cKZT1c5KaT0Zpsnsljqq6HSG3wF8u0m405d6f3VUMRf4HDIDy8jDaNrq/AuceXg3V4B4+Q6vBFm1augLnPlo66hqMcgCzdR+6XRYAYE4w6rTDZzAASkzZaJusZFzswKzxTcZhDz7XrE71kdlsa3xuZPd6MKWyMgoTyzsGYDg3PJj1OZwkRWrLjb2q7jJq1cllSZIujaqtppWqwV7uMEOrLheu90q0OpcfDN1B0Bgg6WjpQAvMu/atkOvoAHv195SAj25E+iBY94eo29mGbtkEI9H20xkmk7VNvv99F/WBaB7bJGKU/G1j8kAVrLtVbdMUWuzbQ41iqUxc97Jli5WxJphqsBz9x0MXvhq4NJI0fFXwCHx1cAc+G7M3AVdwfhzMZvvNwNGg+AdHCq32/w8LJ8cfP7bQKQAAAABJRU5ErkJggg=="
-                        class="h-6 w-6">
+                    <img src="images/Icon/Imagesearch.svg" class="h-7 w-7">
+                    <img src="images/Icon/SearchIcon.svg" class="h-7 w-7">
                 </button>
-
             </div>
 
             <!-- ไอคอนเมนู -->
-            <div class="flex items-center space-x-4">
-                <button>🛒</button>
-                <button>🔔</button>
-                <button>🌍 English ▼</button>
-                <button class="text-primary flex items-center space-x-1">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAf5JREFUSEvFVoltwzAMFDdpJmmzSTNJ20maTtJ2kmYT1meIwomiZDmAEQFBAFvmkcfjI+lBRx6Em3YDq+pTSuklpYT/W3b8JiI/e4KYAs5grymlt4FxOAHwrxknhsCTgN4Xc+BDRIyRxt8ucAb9zpTah4joF5EhKkf7c06B3QXouQceAmeDf+QmjFy2KAyc7YL3gBEpBIQDyt6ZK0oBDFfCCtITgjfAqvq5GIOQGtBsFO/NKU4BGCk5VVU4a2K8isiFna+AVRUGES0OIjm5SJmJRlR83znZpMoDc7QQRqlNHwFSkJERlTGEqK/mkdMKBHm2dx4YgkJjaKjhFMiS9BnjuKOqxlLFIBtgmiNBWVRNlyKnovRwrguLDAzDoBqnomzQrRARGLLSi5jigIrdHvBp1HWIZjaKx5UuMtXsWGGSgZmSTWBXAUOWdFGmZ7KX48ZzTzeJZgs0TOG0uILOZXkd6sGVYWFyuiwcMHJrXanqWAEzpTdwGfo6LjU3MxRGas/CYvFVivfArMCmJjtq7urB6aC6tzUkmroMIgmBdw0JqjtbANDcscr0xiI+gXPVpuFAQ+aOXgTCpoKHe1afdejn37r+5Jzb1hmtPt2t5YhlD/40Q8ZXwJ71luduVEmrHqKcR5engN3sBbX44dhSf8xCv9Uo7nm/K+J7AHrf/ANNMVAuz+5WWwAAAABJRU5ErkJggg=="
-                    class="h-6 w-6" />Help </button>
-                <button class="font-bold">Log in / Sign up</button>
+            <div class="flex items-center ml-4 gap-x-4">
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/Favorite Cart_Icon.svg" class="h-9 w-9" alt="favorite cart icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/NotificationIcon.svg" class="h-9 w-9" alt="NotificationIcon">
+                </button>
+                <button class="text-white flex items-center space-x-1">
+                    <img src="images/Icon/GlobeIcon.svg" class="h-9 w-9" alt="language icon"> English
+                    <img src="images/Icon/whiteDropdownIcon.svg" alt="">
+                </button>
+                <button class="text-white flex items-center space-x-1">
+                    <img src="images/Icon/HelpIcon.svg" class="h-9 w-9" alt="help icon"> Help
+                </button>
             </div>
-        </div>
 
-        <!-- แถบเมนู -->
-        <div class="bg-accent text-black px-6 py-2 flex justify-center space-x-6">
-            <a href="#" class="hover:text-primary">Recommendations</a>
-            <a href="#" class="hover:text-primary">Categories ▼</a>
-            <a href="#" class="hover:text-primary">New Arrivals</a>
-            <a href="#" class="hover:text-primary">Best Sellers</a>
-            <a href="#" class="hover:text-primary">Sales & Promotions</a>
-            <a href="#" class="hover:text-primary">See All</a>
+            <button class="font-bold ml-4">Log in / Sign up</button>
         </div>
-    </nav>
+    </div>
+
+    <!-- แถบเมนู -->
+    <div class="bg-accent text-black px-6 py-2 flex justify-center space-x-6">
+        <a href="#" class="hover:text-primary">Recommendations</a>
+        <a href="#" class="hover:text-primary flex items-center">
+            Categories
+            <img src="images/Icon/DropdownIcon.svg" class="h-3 w-3 ml-1" alt="dropdown">
+        </a>
+        <a href="#" class="hover:text-primary">New Arrivals</a>
+        <a href="#" class="hover:text-primary">Best Sellers</a>
+        <a href="#" class="hover:text-primary">Sales & Promotions</a>
+        <a href="#" class="hover:text-primary">See All</a>
+    </div>
+</nav>
 
 </body>
 
 </html>
-
 
     <!-- Banner -->
     <section class="p-6 text-center">
         <img src="images/banner.png" alt="20% OFF Promotion" class="w-full h-auto">
     </section>
 
-    <!-- Categories & Populars -->
     <section class="p-6">
-        <h3 class="text-2xl font-bold mb-4">Popular Categories</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <div class="shadow rounded flex flex-col items-center">
-                <img src="images/frieren nendoriod.jpg" alt="Anime Figures" class="h-24 w-24 object-cover rounded-full">
-                <!-- <p class="mt-2">Anime Figures</p> -->
-            </div>
-            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
-                <img src="assets/images/category2.jpg" alt="Plush Toys" class="h-24 w-24 object-cover rounded-full">
-                <p class="mt-2">Plush Toys</p>
-            </div>
-            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
-                <img src="assets/images/category3.jpg" alt="Model Kits" class="h-24 w-24 object-cover rounded-full">
-                <p class="mt-2">Model Kits</p>
-            </div>
-            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
-                <img src="assets/images/category4.jpg" alt="Board Games" class="h-24 w-24 object-cover rounded-full">
-                <p class="mt-2">Board Games</p>
-            </div>
-            <div class="bg-white p-4 shadow rounded flex flex-col items-center">
-                <img src="assets/images/category4.jpg" alt="Board Games" class="h-24 w-24 object-cover rounded-full">
-                <p class="mt-2">Board Games</p>
-            </div>
+    <h8 class="text-2xl mb-4">Populars</h8>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/frieren nendoriod.jpg" alt="frieren nendoriod" class="w-full h-full object-cover">
         </div>
-    </section>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/gojo figure.jpg" alt="gojo figure" class="w-full h-full object-cover">
+        </div>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/naruto painted.jpg" alt="naruto painted" class="w-full h-full object-cover">
+        </div>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/aoba josai jacket.jpg" alt="aoba jacket" class="w-full h-full object-cover">
+        </div>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/deku figure.jpg" alt="deku" class="w-full h-full object-cover">
+        </div>
+    </div>
+</section>
+
+<section class="p-6">
+    <h8 class="text-2xl mb-4">Popular Categories</h8>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/darling figure.jpg" alt="darling Figures" class="w-full h-full object-cover">
+        </div>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/zoro figure.jpg" alt="zoro Figures" class="w-full h-full object-cover">
+        </div>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/yuma acrylic.jpg" alt="yuma" class="w-full h-full object-cover">
+        </div>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/killua standee.jpg" alt="killua standee" class="w-full h-full object-cover">
+        </div>
+        <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
+            <img src="images/bocchi doll.jpg" alt="bocchi" class="w-full h-full object-cover">
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
-    <footer class="bg-secondary text-white p-6 mt-6">
+    <footer class="bg-primary text-white p-6 mt-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div>
+                <h4 class="font-bold">About Goods for You</h4>
+                    <li>About Us</li>
+                    <li>Official Blog</li>
+                    <li>Our Missions</li>
+            </div>
+            <div>
+                <h4 class="font-bold">Customer Service</h4>
+                    <li>Contact Us</li>
+                    <li>FAQ</li>
+                    <li>Shipping & Delivery</li>
+                    <li>Return & Refund</li>
+            </div>
+            <div>
+                <h4 class="font-bold">Payment</h4>
+                <div class="flex space-x-2 items-center">
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/VisaIcon.svg" class="h-7 w-7" alt="visa icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/MasterCardIcon.svg" class="h-7 w-7" alt="Mastercard icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/Paypal App_Icon.svg" class="h-7 w-7" alt="Paypal icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/POS Terminal_Icon.svg" class="h-7 w-7" alt="POS icon">
+                    </button>
+                </div>
+
+                <ul>
+                    <h4 class="font-bold">Logistics</h4>
+                    <div class="flex space-x-2 items-center">
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/SupplierIcon.svg" class="h-7 w-7" alt="SupplierIcon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/DeliveryIcon.svg" class="h-7 w-7" alt="DeliveryIcon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/Track Order_Icon.svg" class="h-7 w-7" alt="Track Order Icon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/TrolleyIcon.svg" class="h-7 w-7" alt="TrolleyIcon">
+                        </button>
+                    </div>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold">Stay Connected</h4>
+                <li>Follow Us</li>
+                <div class="flex space-x-2 items-center">
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/X_Icon.svg" class="h-7 w-7" alt="X_Icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/Facebook_Icon.svg" class="h-7 w-7" alt="Facebook_Icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/InstagramIcon.svg" class="h-7 w-7" alt="Instagram_Icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/YouTubeIcon.svg" class="h-7 w-7" alt="YouTubeIcon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/Mail_Icon.svg" class="h-7 w-7" alt="Mail_Icon">
+                    </button>
+            </div>
+        </div>
         <p>© 2025 Goods for You</p>
     </footer>
 
