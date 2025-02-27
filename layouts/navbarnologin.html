@@ -1,0 +1,57 @@
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind.config.js"></script>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+
+<nav class="bg-primary text-white sticky top-0 z-50 shadow-md">
+    <!-- แถบบน -->
+    <div class="flex justify-between items-center px-6 py-3">
+        <!-- โลโก้ + ช่องค้นหา -->
+        <div class="flex items-center space-x-4 flex-grow">
+            <img src="images/logo1000px.png" alt="Goods for You Logo" class="h-16 w-auto">
+
+            <!-- ช่องค้นหา -->
+            <div class="hidden md:flex items-center bg-light rounded-full px-4 py-2 flex-grow max-w-lg">
+                <input type="text" placeholder="What are you looking for? | Saved Search"
+                    class="bg-light outline-none w-full text-white">
+                <button class="text-primary flex items-center space-x-1">
+                    <img src="images/Imagesearch.svg" class="h-7 w-7">
+                    <img src="images/SearchIcon.svg" class="h-7 w-7">
+                </button>
+            </div>
+
+            <!-- ไอคอนเมนู -->
+            <div class="flex items-center ml-4 gap-x-4">
+                <button class="text-primary flex items-center">
+                    <img src="images/Favorite Cart_Icon.svg" class="h-9 w-9" alt="favorite cart icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/NotificationIcon.svg" class="h-9 w-9" alt="NotificationIcon">
+                </button>
+                <button class="text-white flex items-center space-x-1">
+                    <img src="images/GlobeIcon.svg" class="h-9 w-9" alt="language icon"> English
+                    <img src="images/whiteDropdownIcon.svg" alt="">
+                </button>
+                <button class="text-white flex items-center space-x-1">
+                    <img src="images/HelpIcon.svg" class="h-9 w-9" alt="help icon"> Help
+                </button>
+            </div>
+
+            <button class="font-bold ml-4">Log in / Sign up</button>
+        </div>
+    </div>
+
+    <!-- แถบเมนู -->
+    <div class="bg-accent text-black px-6 py-2 flex justify-center space-x-6">
+        <a href="#" class="hover:text-primary">Recommendations</a>
+        <a href="#" class="hover:text-primary flex items-center">
+            Categories
+            <img src="images/DropdownIcon.svg" class="h-3 w-3 ml-1" alt="dropdown">
+        </a>
+        <a href="#" class="hover:text-primary">New Arrivals</a>
+        <a href="#" class="hover:text-primary">Best Sellers</a>
+        <a href="#" class="hover:text-primary">Sales & Promotions</a>
+        <a href="#" class="hover:text-primary">See All</a>
+    </div>
+</nav>
