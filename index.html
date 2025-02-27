@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<htm lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,13 @@
     <title>Goods for You</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
+    <script src="scripts/main.js"></script>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body class="bg-white">
 
+<!-- Navbar -->
 <nav class="bg-primary text-white sticky top-0 z-50 shadow-md">
     <!-- แถบบน -->
     <div class="flex justify-between items-center px-6 py-3">
@@ -29,24 +31,58 @@
                 </button>
             </div>
 
-            <!-- ไอคอนเมนู -->
-            <div class="flex items-center ml-4 gap-x-4">
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/Favorite Cart_Icon.svg" class="h-9 w-9" alt="favorite cart icon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/NotificationIcon.svg" class="h-9 w-9" alt="NotificationIcon">
-                </button>
-                <button class="text-white flex items-center space-x-1">
-                    <img src="images/Icon/GlobeIcon.svg" class="h-9 w-9" alt="language icon"> English
-                    <img src="images/Icon/whiteDropdownIcon.svg" alt="">
-                </button>
-                <button class="text-white flex items-center space-x-1">
-                    <img src="images/Icon/HelpIcon.svg" class="h-9 w-9" alt="help icon"> Help
-                </button>
-            </div>
+<!-- ไอคอนเมนู -->
+<div class="flex items-center ml-4 gap-x-4">
+    <!-- Favorite Cart -->
+    <button class="text-primary flex items-center">
+        <img src="images/Icon/Favorite Cart_Icon.svg" class="h-9 w-9" alt="favorite cart icon">
+    </button>
 
-            <button class="font-bold ml-4">Log in / Sign up</button>
+    <!-- Notification Icon -->
+    <div class="relative">
+        <button id="notification-btn" class="text-primary flex items-center">
+            <img src="images/Icon/NotificationIcon.svg" class="h-9 w-9" alt="NotificationIcon">
+        </button>
+
+        <!-- Notification Popup -->
+        <div id="notification-popup"
+            class="hidden absolute top-12 right-0 bg-white text-black shadow-lg rounded-lg w-72 p-4">
+            <div class="flex items-center gap-x-2">
+                <img src="images/Icon/YellowNotificationIcon.svg" class="h-6 w-6 text-orange-500">
+                <span>You don't have any notifications yet.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Dropdown -->
+    <div class="relative">
+        <button id="language-btn" class="text-white flex items-center gap-x-2">
+            <img id="current-flag" src="https://flagcdn.com/w40/us.png" class="h-6 w-6" alt="US Flag">
+            <span id="current-lang">English</span>
+            <img src="images/Icon/whiteDropdownIcon.svg" alt="">
+        </button>
+
+        <!-- Dropdown เมนูภาษา -->
+        <div id="language-dropdown"
+            class="hidden absolute top-12 left-0 bg-white text-black shadow-lg rounded-lg w-40 p-2">
+            <button class="flex items-center gap-x-2 p-2 w-full hover:bg-gray-100" onclick="changeLanguage('en')">
+                <img src="https://flagcdn.com/w40/us.png" class="h-6 w-6" alt="US Flag"> English
+            </button>
+            <button class="flex items-center gap-x-2 p-2 w-full hover:bg-gray-100" onclick="changeLanguage('th')">
+                <img src="https://flagcdn.com/w40/th.png" class="h-6 w-6" alt="Thai Flag"> ไทย
+            </button>
+        </div>
+    </div>
+
+    <!-- Help -->
+    <button class="text-white flex items-center gap-x-2">
+        <img src="images/Icon/HelpIcon.svg" class="h-9 w-9" alt="help icon">
+        Help
+    </button>
+</div>
+            <button class="font-bold ml-4" onclick="window.location.href='login.html'">
+                Log in / Sign up
+            </button>
         </div>
     </div>
 
@@ -66,15 +102,14 @@
 
 </body>
 
-</html>
-
     <!-- Banner -->
     <section class="p-6 text-center">
         <img src="images/banner.png" alt="20% OFF Promotion" class="w-full h-auto">
     </section>
 
+    <!-- Populars -->
     <section class="p-6">
-    <h8 class="text-2xl mb-4">Populars</h8>
+    <h8 class="text-2xl font-semibold mb-4">Populars</h8>
     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
         <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
             <img src="images/frieren nendoriod.jpg" alt="frieren nendoriod" class="w-full h-full object-cover">
@@ -94,8 +129,9 @@
     </div>
 </section>
 
+<!-- Popular Categories -->
 <section class="p-6">
-    <h8 class="text-2xl mb-4">Popular Categories</h8>
+    <h\3 class="text-2xl font-semibold mb-4">Popular Categories</h8>
     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
         <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
             <img src="images/darling figure.jpg" alt="darling Figures" class="w-full h-full object-cover">
@@ -112,6 +148,69 @@
         <div class="shadow-lg rounded-full overflow-hidden w-24 h-24 flex items-center justify-center">
             <img src="images/bocchi doll.jpg" alt="bocchi" class="w-full h-full object-cover">
         </div>
+    </div>
+</section>
+
+<!-- Popular Products -->
+<section class="p-6">
+    <h3 class="text-2xl font-semibold mb-4">Recommended Products</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Product 1 -->
+    <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden">
+        <div class="flex justify-center items-center relative" >
+            <img src="images/killlua nendoriod1.jpg" alt="Nendoroid Killua" class="w-[500px] h-[500px] object-cover">
+            <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">HOT 🔥</span>
+        </div>
+        <div class="p-3">
+            <p class="text-gray-800 font-bold">฿ 1,699.00</p>
+            <p class="text-sm text-gray-600">Nendoroid Hunter x Hunter 'Killua' 1184</p>
+        </div>
+    </a>
+
+        <!-- Product 2 -->
+        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden">
+            <img src="images/doll frieren1.jpg" alt="Doll Frieren" class="w-[500px] h-[500px] object-cover">
+            <div class="p-3">
+                <p class="text-gray-800 font-bold">฿ 555.00</p>
+                <p class="text-sm text-gray-600">Doll Frieren: Beyond Journey's End 'Frieren'</p>
+            </div>
+        </a>
+
+        <!-- Product 3 -->
+        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden">
+            <img src="images/gundum figure.jpg" alt="Gundam MODEROID" class="w-[500px] h-[500px] object-cover">
+            <div class="p-3">
+                <p class="text-gray-800 font-bold">฿ 799.00</p>
+                <p class="text-sm text-gray-600">Figure Gundam MODEROID 'Tekkaman Blade'</p>
+            </div>
+        </a>
+
+        <!-- Product 4 -->
+        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden">
+            <img src="images/maririn figure.jpg" alt="Marin Figure" class="w-[500px] h-[500px] object-cover">
+            <div class="p-3">
+                <p class="text-gray-800 font-bold">฿ 1,599.00</p>
+                <p class="text-sm text-gray-600">Figure My Dress-Up Darling 'Maririn'</p>
+            </div>
+        </a>
+
+        <!-- Product 5 -->
+        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden">
+            <img src="images/pin sakamoto.jpg" alt="Pin Sakamoto Days" class="w-[500px] h-[500px] object-cover">
+            <div class="p-3">
+                <p class="text-gray-800 font-bold">฿ 149.00</p>
+                <p class="text-sm text-gray-600">Pin Sakamoto Days</p>
+            </div>
+        </a>
+
+        <!-- Product 6 -->
+        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden">
+            <img src="images/jujutsu boardgame.jpg" alt="Jujutsu Boardgame" class="w-[500px] h-[500px] object-cover">
+            <div class="p-3">
+                <p class="text-gray-800 font-bold">฿ 1,999.00</p>
+                <p class="text-sm text-gray-600">Boardgame Jujutsu Kaisen</p>
+            </div>
+        </a>
     </div>
 </section>
 
@@ -166,6 +265,7 @@
                     </div>
                 </ul>
             </div>
+
             <div>
                 <h4 class="font-bold">Stay Connected</h4>
                 <li>Follow Us</li>
@@ -185,6 +285,7 @@
                     <button class="text-primary flex items-center">
                         <img src="images/Icon/Mail_Icon.svg" class="h-7 w-7" alt="Mail_Icon">
                     </button>
+                </div>
             </div>
         </div>
         <p>© 2025 Goods for You</p>
