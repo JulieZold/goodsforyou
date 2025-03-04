@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>About Us</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
     <script src="scripts/main.js"></script>
@@ -22,7 +22,7 @@
                 <a href="index.html">
                     <img src="images/logonew.png" alt="Goods for You Logo" class="h-16 w-auto">
                 </a>
-    
+
                 <!-- ช่องค้นหา -->
                 <div class="hidden md:flex items-center bg-light rounded-full px-4 py-2 flex-grow max-w-lg">
                     <input type="text" placeholder="What are you looking for? | Saved Search"
@@ -33,14 +33,14 @@
                     </button>
                 </div>
             </div>
-    
+
             <!-- ไอคอนเมนู -->
             <div class="flex items-center gap-x-5">
                 <!-- Favorite Cart -->
                 <button class="text-primary flex items-center">
                     <img src="images/Icon/Favorite Cart_Icon.svg" class="h-8 w-8" alt="favorite cart icon">
                 </button>
-    
+
                 <!-- Notification Icon -->
                 <div class="relative">
                     <button id="notification-btn" class="text-primary flex items-center">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Language Dropdown -->
                 <div class="relative">
                     <button id="language-btn" class="text-white flex items-center gap-x-2">
@@ -74,8 +74,7 @@
                         </button>
                     </div>
                 </div>
-    
-                <!-- Help -->
+
                 <a href="help.html">
                     <button class="text-white flex items-center gap-x-2">
                         <img src="images/Icon/HelpIcon.svg" class="h-8 w-8" alt="help icon">
@@ -84,18 +83,18 @@
                 </a>
 
             </div>
-    
+
             <!-- Login / Signup -->
             <button class="font-bold ml-6 px-4 py-2 bg-white text-primary rounded-lg hover:bg-gray-100 transition"
                 onclick="window.location.href='login.html'">
                 Log in / Sign up
             </button>
         </div>
-    
+
         <!-- แถบเมนู -->
         <div class="bg-accent text-black px-6 py-4 flex justify-center space-x-8">
             <a href="#" class="hover:text-primary">Recommendations</a>
-    
+
             <!-- Categories Dropdown -->
             <div class="relative">
                 <button id="categories-btn" class="hover:text-primary flex items-center">
@@ -114,11 +113,11 @@
                     <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20">By Anime Titles</a>
                 </div>
             </div>
-    
+
             <a href="#" class="hover:text-primary">New Arrivals</a>
             <a href="#" class="hover:text-primary">Best Sellers</a>
             <a href="#" class="hover:text-primary">Sales & Promotions</a>
-    
+
             <!-- ปุ่ม See All -->
             <div class="relative">
                 <button id="see-all-btn" class="hover:text-primary flex items-center">
@@ -146,145 +145,136 @@
         </div>
     </nav>
 
-</body>
+    <!-- about us -->
+<section class="bg-accent max-w-4xl mx-auto p-8 mt-8 rounded-lg shadow-lg">
+    <h2 class="text-center text-3xl font-bold text-black mb-6">About Us</h2>
 
-<!-- Login Section -->
-<section class="flex justify-center items-center min-h-screen px-4">
-    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold text-center mb-6">Log in</h2>
-        <form>
-            <div class="mb-4">
-                <label class="block text-sm font-medium">Email address or Phone number</label>
-                <input type="text" class="w-full mt-1 p-2 border border-gray-300 rounded-md"
-                    placeholder="Enter your email or phone" required>
-            </div>
-            <div class="relative mb-4">
-                <label class="block text-sm font-medium">Password</label>
-                <input type="password" class="w-full mt-1 p-2 pr-10 border border-gray-300 rounded-md"
-                    placeholder="Enter your password" required>
-            </div>
-            <a href="#" class="text-blue-500 text-sm block mb-4">Forgot your password?</a>
-            <button type="button" class="w-full bg-secondary text-white py-2 rounded-md font-bold"
-                onclick="window.location.href='home.html'">
-                Log in
-            </button>
+    <div class="grid md:grid-cols-2 gap-8 text-black">
+        <!-- Left Column -->
+        <div>
+            <h3 class="font-semibold text-lg">Who We Are?</h3>
+            <p class="text-base mt-2">
+                At Goods for You, we are passionate about bringing the anime world closer to you.
+                From high-quality merchandise to exclusive collectibles, our mission is to be the
+                go-to destination for every anime fan.
+            </p>
 
-        </form>
-        <div class="flex items-center my-4">
-            <hr class="flex-1 border-gray-400">
-            <span class="px-2 text-gray-600">OR</span>
-            <hr class="flex-1 border-gray-400">
-        </div>
-        <div class="space-y-3">
-            <button onclick="window.location.href='home.html'"
-                class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
-                <img src="images/Icon/applelogin.svg" alt="Apple" class="w-6 h-6">
-                <span class="text-base font-medium">Log in with Apple</span>
-            </button>
-            <button onclick="window.location.href='home.html'"
-                class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
-                <img src="images/Icon/GoogleLogin.svg" alt="Google" class="w-6 h-6">
-                <span class="text-base font-medium">Log in with Google</span>
-            </button>
-            <button onclick="window.location.href='home.html'"
-                class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
-                <img src="images/Icon/FacebookLogin.svg" alt="Facebook" class="w-6 h-6 object-contain">
-                <span class="text-base font-medium leading-none">Log in with Facebook</span>
-            </button>
-            <button onclick="window.location.href='home.html'"
-                class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
-                <img src="images/Icon/LineLogin.svg" alt="Line" class="w-6 h-6 object-contain">
-                <span class="text-base font-medium leading-none">Log in with Line</span>
-            </button>
-        </div>
-        
-        <div class="mt-6 text-center">
-            <p class="text-sm text-gray-600">Didn't have an account?</p>
-            <a href="home.html" class="block mt-2 border border-red-500 text-red-500 py-2 rounded-md font-bold text-center">
-                Sign up
-            </a>
+            <h3 class="font-semibold text-lg mt-4">Our Vision :</h3>
+            <p class="text-base mt-2">
+                To create a community where anime enthusiasts can find products that inspire,
+                connect, and celebrate their passion for anime culture.
+            </p>
+
+            <h3 class="font-semibold text-lg mt-4">Our Story :</h3>
+            <p class="text-base mt-2">
+                Founded by a group of anime lovers, Goods for You started with a small shop catering
+                to local fans. Over time, we have grown into an international platform, offering
+                carefully selected products to customers worldwide.
+            </p>
         </div>
 
+        <!-- Right Column -->
+        <div>
+            <h3 class="font-semibold text-lg">What We Offer :</h3>
+            <ul class="text-base mt-2 list-disc list-inside">
+                <li>Wide Variety of Products: From figures, plushies, clothing, to limited-edition items.</li>
+                <li>Authenticity Guaranteed: All products are official and licensed.</li>
+                <li>Worldwide Shipping: Bringing anime merchandise to fans everywhere.</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mt-4">Why Choose Us?</h3>
+            <ul class="text-base mt-2 list-disc list-inside">
+                <li>Trusted by Anime Fans: With thousands of happy customers.</li>
+                <li>Excellent Customer Service: Dedicated support for a seamless shopping experience.</li>
+                <li>Exclusive Deals: Regular discounts and promotions for our community.</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mt-4">Join Our Community :</h3>
+            <p class="text-base mt-2">
+                Follow us on social media to stay updated on new arrivals, promotions, and exciting anime news!
+                Let's celebrate our love for anime together.
+            </p>
+        </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-primary text-white p-6 mt-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div>
-            <h4 class="font-bold">About Goods for You</h4>
-            <li>About Us</li>
-            <li>Official Blog</li>
-            <li>Our Missions</li>
-        </div>
-        <div>
-            <h4 class="font-bold">Customer Service</h4>
-            <li>Contact Us</li>
-            <li>FAQ</li>
-            <li>Shipping & Delivery</li>
-            <li>Return & Refund</li>
-        </div>
-        <div>
-            <h4 class="font-bold">Payment</h4>
-            <div class="flex space-x-2 items-center">
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/VisaIcon.svg" class="h-7 w-7" alt="visa icon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/MasterCardIcon.svg" class="h-7 w-7" alt="Mastercard icon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/Paypal App_Icon.svg" class="h-7 w-7" alt="Paypal icon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/POS Terminal_Icon.svg" class="h-7 w-7" alt="POS icon">
-                </button>
-            </div>
-
-            <ul>
-                <h4 class="font-bold">Logistics</h4>
-                <div class="flex space-x-2 items-center">
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/SupplierIcon.svg" class="h-7 w-7" alt="SupplierIcon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/DeliveryIcon.svg" class="h-7 w-7" alt="DeliveryIcon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/Track Order_Icon.svg" class="h-7 w-7" alt="Track Order Icon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/TrolleyIcon.svg" class="h-7 w-7" alt="TrolleyIcon">
-                    </button>
+        <!-- Footer -->
+        <footer class="bg-primary text-white p-6 mt-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div>
+                    <h4 class="font-bold">About Goods for You</h4>
+                    <li>About Us</li>
+                    <li>Official Blog</li>
+                    <li>Our Missions</li>
                 </div>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="font-bold">Stay Connected</h4>
-            <li>Follow Us</li>
-            <div class="flex space-x-2 items-center">
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/X_Icon.svg" class="h-7 w-7" alt="X_Icon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/Facebook_Icon.svg" class="h-7 w-7" alt="Facebook_Icon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/InstagramIcon.svg" class="h-7 w-7" alt="Instagram_Icon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/YouTubeIcon.svg" class="h-7 w-7" alt="YouTubeIcon">
-                </button>
-                <button class="text-primary flex items-center">
-                    <img src="images/Icon/Mail_Icon.svg" class="h-7 w-7" alt="Mail_Icon">
-                </button>
+                <div>
+                    <h4 class="font-bold">Customer Service</h4>
+                    <li>Contact Us</li>
+                    <li>FAQ</li>
+                    <li>Shipping & Delivery</li>
+                    <li>Return & Refund</li>
+                </div>
+                <div>
+                    <h4 class="font-bold">Payment</h4>
+                    <div class="flex space-x-2 items-center">
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/VisaIcon.svg" class="h-7 w-7" alt="visa icon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/MasterCardIcon.svg" class="h-7 w-7" alt="Mastercard icon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/Paypal App_Icon.svg" class="h-7 w-7" alt="Paypal icon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/POS Terminal_Icon.svg" class="h-7 w-7" alt="POS icon">
+                        </button>
+                    </div>
+        
+                    <ul>
+                        <h4 class="font-bold">Logistics</h4>
+                        <div class="flex space-x-2 items-center">
+                            <button class="text-primary flex items-center">
+                                <img src="images/Icon/SupplierIcon.svg" class="h-7 w-7" alt="SupplierIcon">
+                            </button>
+                            <button class="text-primary flex items-center">
+                                <img src="images/Icon/DeliveryIcon.svg" class="h-7 w-7" alt="DeliveryIcon">
+                            </button>
+                            <button class="text-primary flex items-center">
+                                <img src="images/Icon/Track Order_Icon.svg" class="h-7 w-7" alt="Track Order Icon">
+                            </button>
+                            <button class="text-primary flex items-center">
+                                <img src="images/Icon/TrolleyIcon.svg" class="h-7 w-7" alt="TrolleyIcon">
+                            </button>
+                        </div>
+                    </ul>
+                </div>
+        
+                <div>
+                    <h4 class="font-bold">Stay Connected</h4>
+                    <li>Follow Us</li>
+                    <div class="flex space-x-2 items-center">
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/X_Icon.svg" class="h-7 w-7" alt="X_Icon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/Facebook_Icon.svg" class="h-7 w-7" alt="Facebook_Icon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/InstagramIcon.svg" class="h-7 w-7" alt="Instagram_Icon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/YouTubeIcon.svg" class="h-7 w-7" alt="YouTubeIcon">
+                        </button>
+                        <button class="text-primary flex items-center">
+                            <img src="images/Icon/Mail_Icon.svg" class="h-7 w-7" alt="Mail_Icon">
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <p>© 2025 Goods for You</p>
-</footer>
-
-</body>
-
-</html>
+            <p>© 2025 Goods for You</p>
+        </footer>
+        
+        </body>
+        
+        </html>
