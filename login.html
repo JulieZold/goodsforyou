@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="bg-primary text-white sticky top-0 z-50 shadow-md">
+        <!-- แถบบน -->
+        <div class="flex justify-between items-center px-6 py-4">
+            <!-- โลโก้ + ช่องค้นหา -->
+            <div class="flex items-center space-x-4 flex-grow">
+                <img src="images/logonew.png" alt="Goods for You Logo" class="h-16 w-auto">
+
+                <!-- ช่องค้นหา -->
+                <div class="hidden md:flex items-center bg-light rounded-full px-4 py-2 flex-grow max-w-lg">
+                    <input type="text" placeholder="What are you looking for? | Saved Search"
+                        class="bg-light outline-none w-full text-white">
+                    <button class="text-primary flex items-center space-x-1">
+                        <img src="images/Icon/Imagesearch.svg" class="h-7 w-7">
+                        <img src="images/Icon/SearchIcon.svg" class="h-7 w-7">
+                    </button>
+                </div>
+
+                <!-- ไอคอนเมนู -->
+                <div class="flex items-center ml-4 gap-x-6">
+                    <!-- Favorite Cart -->
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/Favorite Cart_Icon.svg" class="h-9 w-9" alt="favorite cart icon">
+                    </button>
+
+                    <!-- Notification Icon -->
+                    <div class="relative">
+                        <button id="notification-btn" class="text-primary flex items-center">
+                            <img src="images/Icon/NotificationIcon.svg" class="h-9 w-9" alt="NotificationIcon">
+                        </button>
+
+                        <!-- Notification Popup -->
+                        <div id="notification-popup"
+                            class="hidden absolute top-12 right-0 bg-white text-black shadow-lg rounded-lg w-72 p-4">
+                            <div class="flex items-center gap-x-2">
+                                <img src="images/Icon/YellowNotificationIcon.svg" class="h-6 w-6 text-orange-500">
+                                <span>You don't have any notifications yet.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Language Dropdown -->
+                    <div class="relative">
+                        <button id="language-btn" class="text-white flex items-center gap-x-2">
+                            <img id="current-flag" src="https://flagcdn.com/w40/us.png" class="h-6 w-6" alt="US Flag">
+                            <span id="current-lang">English</span>
+                            <img src="images/Icon/whiteDropdownIcon.svg" alt="">
+                        </button>
+
+                        <!-- Dropdown เมนูภาษา -->
+                        <div id="language-dropdown"
+                            class="hidden absolute top-12 left-0 bg-white text-black shadow-lg rounded-lg w-40 p-2">
+                            <button class="flex items-center gap-x-2 p-2 w-full hover:bg-gray-100"
+                                onclick="changeLanguage('en')">
+                                <img src="https://flagcdn.com/w40/us.png" class="h-6 w-6" alt="US Flag"> English
+                            </button>
+                            <button class="flex items-center gap-x-2 p-2 w-full hover:bg-gray-100"
+                                onclick="changeLanguage('th')">
+                                <img src="https://flagcdn.com/w40/th.png" class="h-6 w-6" alt="Thai Flag"> ไทย
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Help -->
+                    <button class="text-white flex items-center gap-x-2">
+                        <img src="images/Icon/HelpIcon.svg" class="h-9 w-9" alt="help icon">
+                        Help
+                    </button>
+                </div>
+
+                <!-- Login / Signup -->
+                <button class="font-bold ml-6 px-4 py-2 bg-white text-primary rounded-lg hover:bg-gray-100 transition"
+                    onclick="window.location.href='login.html'">
+                    Log in / Sign up
+                </button>
+            </div>
+        </div>
+
+        <!-- แถบเมนู -->
+        <div class="bg-accent text-black px-6 py-3 flex justify-center space-x-8">
+            <a href="#" class="hover:text-primary">Recommendations</a>
+
+            <!-- Categories Dropdown -->
+            <div class="relative">
+                <button id="categories-btn" class="hover:text-primary flex items-center">
+                    Categories
+                    <img src="images/Icon/DropdownIcon.svg" class="h-3 w-3 ml-1" alt="dropdown">
+                </button>
+
+                <!-- Dropdown Menu -->
+                <div id="categories-dropdown"
+                    class="hidden absolute left-0 mt-2 w-56 bg-light text-black shadow-lg rounded-lg p-2">
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Figures</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Plushies & Dolls</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Standees</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Clothing &
+                        Accessories</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Posters & Prints</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Books & Media</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Rare & Limited
+                        Items</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">By Anime Titles</a>
+                </div>
+            </div>
+
+            <a href="#" class="hover:text-primary">New Arrivals</a>
+            <a href="#" class="hover:text-primary">Best Sellers</a>
+            <a href="#" class="hover:text-primary">Sales & Promotions</a>
+
+            <!-- ปุ่ม See All -->
+            <div class="relative">
+                <button id="see-all-btn" class="hover:text-primary flex items-center">
+                    See All
+                    <img src="images/Icon/DropdownIcon.svg" class="h-3 w-3 ml-1" alt="dropdown">
+                </button>
+
+                <!-- See All Dropdown -->
+                <div id="see-all-dropdown" class="hidden absolute left-0 mt-2 w-56 bg-light text-black shadow-lg rounded-lg p-2 
+                       max-h-80 overflow-y-auto transition-all duration-300">
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Recommendations</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Figures</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Plushies & Dolls</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Standees</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Clothing &
+                        Accessories</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Posters & Prints</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Books & Media</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Rare & Limited
+                        Items</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">By Anime Titles</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">FAQ</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Shipping Delivery</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Return & Refunds</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">About Us</a>
+                    <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20 transition">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+</body>
+
+<!-- Login Section -->
+<section class="flex justify-center items-center min-h-screen px-4">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center mb-6">Log in</h2>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium">Email address or Phone number</label>
+                <input type="text" class="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                    placeholder="Enter your email or phone" required>
+            </div>
+            <div class="relative mb-4">
+                <label class="block text-sm font-medium">Password</label>
+                <input type="password" class="w-full mt-1 p-2 pr-10 border border-gray-300 rounded-md"
+                    placeholder="Enter your password" required>
+            </div>
+            <a href="#" class="text-blue-500 text-sm block mb-4">Forgot your password?</a>
+            <button type="button" class="w-full bg-secondary text-white py-2 rounded-md font-bold"
+                onclick="window.location.href='home.html'">
+                Log in
+            </button>
+
+        </form>
+        <div class="flex items-center my-4">
+            <hr class="flex-1 border-gray-400">
+            <span class="px-2 text-gray-600">OR</span>
+            <hr class="flex-1 border-gray-400">
+        </div>
+        <div class="space-y-3">
+            <button class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
+                <img src="images/Icon/applelogin.svg" alt="Apple" class="w-6 h-6">
+                <span class="text-base font-medium">Log in with Apple</span>
+            </button>
+            <button class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
+                <img src="images/Icon/GoogleLogin.svg" alt="Google" class="w-6 h-6">
+                <span class="text-base font-medium">Log in with Google</span>
+            </button>
+            <button class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
+                <img src="images/Icon/FacebookLogin.svg" alt="Facebook" class="w-6 h-6 object-contain">
+                <span class="text-base font-medium leading-none">Log in with Facebook</span>
+            </button>
+            <button class="w-full flex items-center justify-center gap-x-3 border border-gray-400 py-2 rounded-md">
+                <img src="images/Icon/LineLogin.svg" alt="Line" class="w-6 h-6 object-contain">
+                <span class="text-base font-medium leading-none">Log in with Line</span>
+            </button>
+        </div>
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">Didn't have an account?</p>
+            <a href="#" class="block mt-2 border border-red-500 text-red-500 py-2 rounded-md font-bold">Sign up</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white p-6 mt-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div>
+            <h4 class="font-bold">About Goods for You</h4>
+            <li>About Us</li>
+            <li>Official Blog</li>
+            <li>Our Missions</li>
+        </div>
+        <div>
+            <h4 class="font-bold">Customer Service</h4>
+            <li>Contact Us</li>
+            <li>FAQ</li>
+            <li>Shipping & Delivery</li>
+            <li>Return & Refund</li>
+        </div>
+        <div>
+            <h4 class="font-bold">Payment</h4>
+            <div class="flex space-x-2 items-center">
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/VisaIcon.svg" class="h-7 w-7" alt="visa icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/MasterCardIcon.svg" class="h-7 w-7" alt="Mastercard icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/Paypal App_Icon.svg" class="h-7 w-7" alt="Paypal icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/POS Terminal_Icon.svg" class="h-7 w-7" alt="POS icon">
+                </button>
+            </div>
+
+            <ul>
+                <h4 class="font-bold">Logistics</h4>
+                <div class="flex space-x-2 items-center">
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/SupplierIcon.svg" class="h-7 w-7" alt="SupplierIcon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/DeliveryIcon.svg" class="h-7 w-7" alt="DeliveryIcon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/Track Order_Icon.svg" class="h-7 w-7" alt="Track Order Icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/TrolleyIcon.svg" class="h-7 w-7" alt="TrolleyIcon">
+                    </button>
+                </div>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold">Stay Connected</h4>
+            <li>Follow Us</li>
+            <div class="flex space-x-2 items-center">
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/X_Icon.svg" class="h-7 w-7" alt="X_Icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/Facebook_Icon.svg" class="h-7 w-7" alt="Facebook_Icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/InstagramIcon.svg" class="h-7 w-7" alt="Instagram_Icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/YouTubeIcon.svg" class="h-7 w-7" alt="YouTubeIcon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/Mail_Icon.svg" class="h-7 w-7" alt="Mail_Icon">
+                </button>
+            </div>
+        </div>
+    </div>
+    <p>© 2025 Goods for You</p>
+</footer>
+
+</body>
+
+</html>
