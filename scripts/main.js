@@ -49,3 +49,53 @@ document.addEventListener("DOMContentLoaded", function () {
         languageDropdown.classList.add("hidden");
     };
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const categoriesBtn = document.getElementById("categories-btn");
+    const categoriesDropdown = document.getElementById("categories-dropdown");
+
+    if (categoriesBtn && categoriesDropdown) {
+        categoriesBtn.addEventListener("click", (event) => {
+            event.stopPropagation(); // ป้องกันการปิด dropdown ทันที
+            categoriesDropdown.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!categoriesBtn.contains(event.target) && !categoriesDropdown.contains(event.target)) {
+                categoriesDropdown.classList.add("hidden");
+            }
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const seeAllBtn = document.getElementById("see-all-btn"); // ปุ่ม See All
+    const seeAllDropdown = document.getElementById("see-all-dropdown"); // Dropdown Menu
+
+    // เมื่อกดปุ่ม See All ให้แสดงหรือซ่อน dropdown
+    seeAllBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // ป้องกัน event จากการซ่อน dropdown ทันที
+        seeAllDropdown.classList.toggle("hidden");
+
+        // ตรวจสอบตำแหน่ง dropdown ว่าจะหลุดจอหรือไม่
+        const dropdownRect = seeAllDropdown.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (dropdownRect.bottom > windowHeight) {
+            // ถ้า Dropdown หลุดขอบล่างจอ ให้ย้ายขึ้นไปด้านบนแทน
+            seeAllDropdown.classList.add("bottom-full");
+            seeAllDropdown.classList.remove("top-full");
+        } else {
+            // ถ้าไม่หลุดขอบล่าง ให้แสดงตามปกติ
+            seeAllDropdown.classList.add("top-full");
+            seeAllDropdown.classList.remove("bottom-full");
+        }
+    });
+
+    // ซ่อน dropdown เมื่อคลิกนอกเมนู
+    document.addEventListener("click", function (event) {
+        if (!seeAllBtn.contains(event.target) && !seeAllDropdown.contains(event.target)) {
+            seeAllDropdown.classList.add("hidden");
+        }
+    });
+});
