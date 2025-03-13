@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help</title>
+    <title>Checkout</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
     <script src="scripts/main.js"></script>
@@ -19,7 +19,7 @@
         <div class="flex justify-between items-center px-6 py-3">
             <!-- โลโก้ + ช่องค้นหา -->
             <div class="flex items-center space-x-6 flex-grow">
-                <a href="index.html">
+                <a href="home.html">
                     <img src="images/logonew.png" alt="Goods for You Logo" class="h-16 w-auto">
                 </a>
 
@@ -37,7 +37,7 @@
             <!-- ไอคอนเมนู -->
             <div class="flex items-center gap-x-5">
                 <!-- Favorite Cart -->
-                <button class="text-primary flex items-center">
+                <button onclick="window.location.href='cart.html'" class="text-primary flex items-center">
                     <img src="images/Icon/Favorite Cart_Icon.svg" class="h-8 w-8" alt="favorite cart icon">
                 </button>
 
@@ -75,19 +75,18 @@
                     </div>
                 </div>
 
-            <a href="help.html">
-                <button class="text-white flex items-center gap-x-2">
-                    <img src="images/Icon/HelpIcon.svg" class="h-8 w-8" alt="help icon">
-                    Help
-                </button>
-            </a>
-
+                <!-- Help -->
+                <a href="helpwithlogin.html">
+                    <button class="text-white flex items-center gap-x-2">
+                        <img src="images/Icon/HelpIcon.svg" class="h-8 w-8" alt="help icon">
+                        Help
+                    </button>
+                </a>
             </div>
 
-            <!-- Login / Signup -->
-            <button class="font-bold ml-6 px-4 py-2 bg-white text-primary rounded-lg hover:bg-gray-100 transition"
-                onclick="window.location.href='login.html'">
-                Log in / Sign up
+            <!-- Account -->
+            <button class="text-white flex items-center gap-x-2 ml-6">
+                <img src="images/Icon/UserIcon.svg" class="h-9 w-9" alt="user">
             </button>
         </div>
 
@@ -145,38 +144,97 @@
         </div>
     </nav>
 
-        <!-- help -->
-        <section class="flex items-center justify-center min-h-[60vh] bg-white p-6">
-            <div class="bg-accent p-8 md:p-10 rounded-2xl shadow-lg max-w-4xl w-full text-center">
-                <h1 class="text-2xl font-bold text-gray-900 mb-6">Customer Support Center</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/OrderMangementIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Order Management</span>
+<!-- ส่วน Checkout Section ที่ปรับปรุงแล้ว -->
+<section class="max-w-6xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-lg my-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Left Section: Shipping & Order Summary -->
+        <div class="md:col-span-2 space-y-6">
+            <!-- Shipping Address -->
+            <div class="bg-gray-50 p-3 rounded-lg shadow">
+                <div class="flex justify-between">
+                    <h3 class="font-bold text-lg">Shipping Address</h3>
+                    <a href="#" class="text-blue-500">Edit</a>
+                </div>
+                <p class="text-gray-500">Name, Phone</p>
+                <p class="text-gray-500">Home Address</p>
+            </div>
+
+            <!-- Order Items -->
+            <div class="bg-gray-50 p-3 rounded-lg shadow">
+                <h3 class="font-medium text-right text-lg">Shipped by Jump Official Store</h3>
+
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-4 border rounded-lg bg-white">
+                        <img src="images/killdoi1.png" alt="Killua" class="w-20 h-20 rounded object-cover">
+                        <div class="flex-1">
+                            <p class="font-semibold">Hunter X Hunter Nendoroid Series Killua Zaoldyeck '1184'</p>
+                            <p class="text-blue-500 font-semibold">฿ 1,699.00</p>
+                        </div>
+                        <p>Qty : 1</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/PaymentRefundIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Payment & Refunds</span>
+
+                    <div class="flex items-center space-x-4 p-4 border rounded-lg bg-white">
+                        <img src="images/maririn figure.jpg" alt="Maririn" class="w-20 h-20 rounded object-cover">
+                        <div class="flex-1">
+                            <p class="font-semibold">Figure My Dress-Up Darling 'Maririn'</p>
+                            <p class="text-blue-500 font-semibold">฿ 1,599.00</p>
+                        </div>
+                        <p>Qty : 1</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/AccountAssistantIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Account Assistance</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/ShippingDeliveryIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Shipping & Delivery</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/ProductInformationIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Product Information</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/ContactUsIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Contact Us</span>
+
+                    <div class="flex items-center space-x-4 p-4 border rounded-lg bg-white">
+                        <img src="images/frierendoll1.png" alt="Frieren" class="w-20 h-20 rounded object-cover">
+                        <div class="flex-1">
+                            <p class="font-semibold">Doll Frieren: Beyond Journey's End 'Frieren'</p>
+                            <p class="text-blue-500 font-semibold">฿ 555.00</p>
+                        </div>
+                        <p>Qty : 1</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Right Section: Payment & Order Summary -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow h-fit sticky top-24">
+            <h3 class="font-bold mb-4 text-lg">Select Payment Method</h3>
+            <div class="space-y-3">
+                <label class="flex items-center border p-3 rounded-lg cursor-pointer bg-white shadow-lg">
+                    <img src="images/Icon/VisaIcon.svg" alt="Visa" class="w-7 h-7">
+                    <span class="ml-2">Visa Card</span>
+                    <input type="radio" name="payment" class="ml-auto w-5 h-5 accent-blue-500" checked>
+                </label>
+                <label class="flex items-center border p-3 rounded-lg cursor-pointer bg-white">
+                    <img src="images/Icon/Paypal App_Icon.svg" alt="PayPal" class="w-7 h-7">
+                    <span class="ml-2">PayPal</span>
+                    <input type="radio" name="payment" class="ml-auto w-5 h-5 accent-blue-500">
+                </label>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="font-bold mb-2 text-lg">Voucher</h3>
+                <div class="flex">
+                    <input type="text" placeholder="Enter Voucher Code"
+                        class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
+                    <button class="ml-2 px-2 py-2 bg-secondary text-white rounded-lg hover:bg-primary">Apply</button>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="font-bold mb-2 text-lg">Order Summary</h3>
+                <p>Sub Total (3 items) : <span class="font-semibold">฿ 3,853.00</span></p>
+                <p>Shipping Fee : <span class="font-semibold">฿ 180</span></p>
+                <p>Discount : <span class="text-red-500 font-semibold">20%</span></p>
+                <p class="mt-2 text-xl font-bold text-red-600">Total : ฿ 3,226.40</p>
+            </div>
+
+            <button onclick="window.location.href='done.html'"
+             class="mt-6 w-full bg-secondary text-white py-3 rounded-lg text-lg font-semibold hover:bg-primary transition duration-300">
+                Place Order Now
+            </button>
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-primary text-white p-6 mt-6">
@@ -257,4 +315,4 @@
     
     </body>
     
-    </html>
+</html>

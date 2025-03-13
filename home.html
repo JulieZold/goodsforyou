@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goods for You Home</title>
+    <title>Homepage</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
     <script src="scripts/main.js"></script>
@@ -37,7 +37,8 @@
         <!-- ไอคอนเมนู -->
         <div class="flex items-center gap-x-5">
             <!-- Favorite Cart -->
-            <button class="text-primary flex items-center">
+            <button onclick="window.location.href='cart.html'"
+            class="text-primary flex items-center">
                 <img src="images/Icon/Favorite Cart_Icon.svg" class="h-8 w-8" alt="favorite cart icon">
             </button>
 
@@ -76,7 +77,7 @@
             </div>
 
             <!-- Help -->
-            <a href="help.html">
+            <a href="helpwithlogin.html">
                 <button class="text-white flex items-center gap-x-2">
                     <img src="images/Icon/HelpIcon.svg" class="h-8 w-8" alt="help icon">
                     Help
@@ -137,7 +138,7 @@
                 <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20">FAQ</a>
                 <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20">Shipping Delivery</a>
                 <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20">Return & Refunds</a>
-                <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20">About Us</a>
+                <a href="aboutus.html" class="block px-4 py-2 rounded-md hover:bg-primary/20">About Us</a>
                 <a href="#" class="block px-4 py-2 rounded-md hover:bg-primary/20">Contact Us</a>
             </div>
         </div>
@@ -145,10 +146,9 @@
 </nav>
 
 <!-- Banner -->
-<section class="p-6 text-center">
-    <img src="images/banner.png" alt="20% OFF Promotion" class="w-full h-auto">
+<section class="px-4 py-6 flex justify-center">
+    <img src="images/banner.png" class="max-w-full h-auto object-center" alt="Promotion Banner 20% OFF">
 </section>
-
 <!-- Populars -->
 <section class="p-6">
     <h8 class="text-2xl font-semibold mb-4">Populars</h8>
@@ -206,12 +206,12 @@
             </div>
             <div class="p-3 h-[100px] flex flex-col justify-between">
                 <p class="text-gray-800 font-bold">฿ 1,699.00</p>
-                <p class="text-sm text-gray-600">Nendoroid Hunter x Hunter ‘Killua’ 1184</p>
+                <p class="text-sm text-gray-600">Nendoroid Hunter x Hunter 'Killua' 1184</p>
             </div>
         </a>
 
         <!-- Product 2 -->
-        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
+        <a href="detailsfrieren.html" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
             <div class="w-full h-[350px]">
                 <img src="images/doll frieren1.jpg" alt="Doll Frieren" class="w-full h-full object-cover">
             </div>
@@ -222,7 +222,7 @@
         </a>
 
         <!-- Product 3 -->
-        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
+        <a href="#" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
             <div class="w-full h-[350px]">
                 <img src="images/gundum figure.jpg" alt="Gundam MODEROID" class="w-full h-full object-cover">
             </div>
@@ -233,7 +233,7 @@
         </a>
 
         <!-- Product 4 -->
-        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
+        <a href="#" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
             <div class="w-full h-[350px]">
                 <img src="images/maririn figure.jpg" alt="Maririn figure" class="w-full h-full object-cover">
             </div>
@@ -244,7 +244,7 @@
         </a>
 
         <!-- Product 5 -->
-        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
+        <a href="#" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
             <div class="w-full h-[350px]">
                 <img src="images/pin sakamoto.jpg" alt="pin sakamoto" class="w-full h-full object-cover">
             </div>
@@ -255,7 +255,7 @@
         </a>
 
         <!-- Product 6 -->
-        <a href="login.html" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
+        <a href="#" class="block shadow-lg rounded-lg overflow-hidden bg-white w-[350px] mx-auto">
             <div class="w-full h-[350px]">
                 <img src="images/jujutsu boardgame.jpg" alt="jujutsu boardgame" class="w-full h-full object-cover">
             </div>
@@ -267,7 +267,6 @@
 
     </div>
 </section>
-
 
 <!-- Footer -->
 <footer class="bg-primary text-white p-6 mt-6">
@@ -302,7 +301,7 @@
                 </button>
             </div>
 
-            <ul>
+            <div>
                 <h4 class="font-bold">Logistics</h4>
                 <div class="flex space-x-2 items-center">
                     <button class="text-primary flex items-center">
@@ -318,7 +317,7 @@
                         <img src="images/Icon/TrolleyIcon.svg" class="h-7 w-7" alt="TrolleyIcon">
                     </button>
                 </div>
-            </ul>
+            </div>
         </div>
 
         <div>

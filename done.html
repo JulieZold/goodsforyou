@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help</title>
+    <title>Done</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
     <script src="scripts/main.js"></script>
@@ -19,7 +19,7 @@
         <div class="flex justify-between items-center px-6 py-3">
             <!-- โลโก้ + ช่องค้นหา -->
             <div class="flex items-center space-x-6 flex-grow">
-                <a href="index.html">
+                <a href="home.html">
                     <img src="images/logonew.png" alt="Goods for You Logo" class="h-16 w-auto">
                 </a>
 
@@ -37,7 +37,7 @@
             <!-- ไอคอนเมนู -->
             <div class="flex items-center gap-x-5">
                 <!-- Favorite Cart -->
-                <button class="text-primary flex items-center">
+                <button onclick="window.location.href='cart.html'" class="text-primary flex items-center">
                     <img src="images/Icon/Favorite Cart_Icon.svg" class="h-8 w-8" alt="favorite cart icon">
                 </button>
 
@@ -75,19 +75,18 @@
                     </div>
                 </div>
 
-            <a href="help.html">
-                <button class="text-white flex items-center gap-x-2">
-                    <img src="images/Icon/HelpIcon.svg" class="h-8 w-8" alt="help icon">
-                    Help
-                </button>
-            </a>
-
+                <!-- Help -->
+                <a href="helpwithlogin.html">
+                    <button class="text-white flex items-center gap-x-2">
+                        <img src="images/Icon/HelpIcon.svg" class="h-8 w-8" alt="help icon">
+                        Help
+                    </button>
+                </a>
             </div>
 
-            <!-- Login / Signup -->
-            <button class="font-bold ml-6 px-4 py-2 bg-white text-primary rounded-lg hover:bg-gray-100 transition"
-                onclick="window.location.href='login.html'">
-                Log in / Sign up
+            <!-- Account -->
+            <button class="text-white flex items-center gap-x-2 ml-6">
+                <img src="images/Icon/UserIcon.svg" class="h-9 w-9" alt="user">
             </button>
         </div>
 
@@ -145,116 +144,121 @@
         </div>
     </nav>
 
-        <!-- help -->
-        <section class="flex items-center justify-center min-h-[60vh] bg-white p-6">
-            <div class="bg-accent p-8 md:p-10 rounded-2xl shadow-lg max-w-4xl w-full text-center">
-                <h1 class="text-2xl font-bold text-gray-900 mb-6">Customer Support Center</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/OrderMangementIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Order Management</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/PaymentRefundIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Payment & Refunds</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/AccountAssistantIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Account Assistance</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/ShippingDeliveryIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Shipping & Delivery</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/ProductInformationIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Product Information</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex items-center gap-3 cursor-pointer">
-                        <img src="images/Icon/ContactUsIcon.svg" class="w-12 h-12">
-                        <span class="text-gray-700 font-medium">Contact Us</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <!-- Footer -->
-    <footer class="bg-primary text-white p-6 mt-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div>
-                <h4 class="font-bold">About Goods for You</h4>
-                <li>About Us</li>
-                <li>Official Blog</li>
-                <li>Our Missions</li>
-            </div>
-            <div>
-                <h4 class="font-bold">Customer Service</h4>
-                <li>Contact Us</li>
-                <li>FAQ</li>
-                <li>Shipping & Delivery</li>
-                <li>Return & Refund</li>
-            </div>
-            <div>
-                <h4 class="font-bold">Payment</h4>
-                <div class="flex space-x-2 items-center">
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/VisaIcon.svg" class="h-7 w-7" alt="visa icon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/MasterCardIcon.svg" class="h-7 w-7" alt="Mastercard icon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/Paypal App_Icon.svg" class="h-7 w-7" alt="Paypal icon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/POS Terminal_Icon.svg" class="h-7 w-7" alt="POS icon">
-                    </button>
-                </div>
-    
-                <ul>
-                    <h4 class="font-bold">Logistics</h4>
-                    <div class="flex space-x-2 items-center">
-                        <button class="text-primary flex items-center">
-                            <img src="images/Icon/SupplierIcon.svg" class="h-7 w-7" alt="SupplierIcon">
-                        </button>
-                        <button class="text-primary flex items-center">
-                            <img src="images/Icon/DeliveryIcon.svg" class="h-7 w-7" alt="DeliveryIcon">
-                        </button>
-                        <button class="text-primary flex items-center">
-                            <img src="images/Icon/Track Order_Icon.svg" class="h-7 w-7" alt="Track Order Icon">
-                        </button>
-                        <button class="text-primary flex items-center">
-                            <img src="images/Icon/TrolleyIcon.svg" class="h-7 w-7" alt="TrolleyIcon">
-                        </button>
-                    </div>
-                </ul>
-            </div>
-    
-            <div>
-                <h4 class="font-bold">Stay Connected</h4>
-                <li>Follow Us</li>
-                <div class="flex space-x-2 items-center">
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/X_Icon.svg" class="h-7 w-7" alt="X_Icon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/Facebook_Icon.svg" class="h-7 w-7" alt="Facebook_Icon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/InstagramIcon.svg" class="h-7 w-7" alt="Instagram_Icon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/YouTubeIcon.svg" class="h-7 w-7" alt="YouTubeIcon">
-                    </button>
-                    <button class="text-primary flex items-center">
-                        <img src="images/Icon/Mail_Icon.svg" class="h-7 w-7" alt="Mail_Icon">
-                    </button>
-                </div>
+<!-- ส่วนเนื้อหาหลัก (ปรับปรุงแล้ว) -->
+<section class="py-16 flex items-center justify-center" style="min-height: calc(100vh - 350px);">
+    <div class="bg-accent rounded-3xl shadow-md p-8 w-full max-w-md text-center">
+        <div class="flex justify-center mb-6">
+            <div class="bg-white rounded-full p-4 w-16 h-16 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-300" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                </svg>
             </div>
         </div>
-        <p>© 2025 Goods for You</p>
-    </footer>
-    
-    </body>
-    
-    </html>
+
+        <h1 class="text-2xl font-bold mb-2">Congratulations!</h1>
+        <p class="text-xl mb-8">Your payment has been successfully processed.</p>
+
+        <a href="home.html"
+            class="inline-flex items-center bg-white text-black py-2 px-6 rounded-full font-medium hover:bg-gray-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+            Back to home
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white p-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div>
+            <h4 class="font-bold">About Goods for You</h4>
+            <li>About Us</li>
+            <li>Official Blog</li>
+            <li>Our Missions</li>
+        </div>
+        <div>
+            <h4 class="font-bold">Customer Service</h4>
+            <li>Contact Us</li>
+            <li>FAQ</li>
+            <li>Shipping & Delivery</li>
+            <li>Return & Refund</li>
+        </div>
+        <div>
+            <h4 class="font-bold">Payment</h4>
+            <div class="flex space-x-2 items-center">
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/VisaIcon.svg" class="h-7 w-7" alt="visa icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/MasterCardIcon.svg" class="h-7 w-7" alt="Mastercard icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/Paypal App_Icon.svg" class="h-7 w-7" alt="Paypal icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/POS Terminal_Icon.svg" class="h-7 w-7" alt="POS icon">
+                </button>
+            </div>
+
+            <ul>
+                <h4 class="font-bold">Logistics</h4>
+                <div class="flex space-x-2 items-center">
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/SupplierIcon.svg" class="h-7 w-7" alt="SupplierIcon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/DeliveryIcon.svg" class="h-7 w-7" alt="DeliveryIcon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/Track Order_Icon.svg" class="h-7 w-7" alt="Track Order Icon">
+                    </button>
+                    <button class="text-primary flex items-center">
+                        <img src="images/Icon/TrolleyIcon.svg" class="h-7 w-7" alt="TrolleyIcon">
+                    </button>
+                </div>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold">Stay Connected</h4>
+            <li>Follow Us</li>
+            <div class="flex space-x-2 items-center">
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/X_Icon.svg" class="h-7 w-7" alt="X_Icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/Facebook_Icon.svg" class="h-7 w-7" alt="Facebook_Icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/InstagramIcon.svg" class="h-7 w-7" alt="Instagram_Icon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/YouTubeIcon.svg" class="h-7 w-7" alt="YouTubeIcon">
+                </button>
+                <button class="text-primary flex items-center">
+                    <img src="images/Icon/Mail_Icon.svg" class="h-7 w-7" alt="Mail_Icon">
+                </button>
+            </div>
+        </div>
+    </div>
+    <p>© 2025 Goods for You</p>
+</footer>
+
+<script>
+    // สามารถเพิ่ม JavaScript เพิ่มเติมตรงนี้
+    // ตัวอย่าง: เพิ่มการเปลี่ยนเส้นทางเมื่อคลิกปุ่ม
+    document.querySelector('a').addEventListener('click', function (e) {
+        e.preventDefault();
+        // เปลี่ยนเป็น URL หน้าหลักของคุณ
+        window.location.href = '/';
+    });
+</script>
+
+</body>
+
+</html>
